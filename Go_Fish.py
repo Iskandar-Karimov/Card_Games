@@ -67,10 +67,10 @@ while len(Human.cards) > 0 and len(Computer.cards) > 0:
     requested_card = int(input("\nWhat card do you want to request?: "))
     found = Computer.check_cards(requested_card)
     print("The opponent had these cards:")
-    go = input("")
     if found == []:
         print("\nGO FISH!\n")
         Human.add_cards(deck.get_cards())
+    go = input("")
     for card in found:
         print(card)
     Human.add_cards(found_cards=found)
@@ -83,7 +83,7 @@ while len(Human.cards) > 0 and len(Computer.cards) > 0:
     computerturn = input("Computer's Turn (Enter to continue): ")
     requested_card2 = Computer.cards[0]
     found2 = Human.check_cards(requested_card2.rank)
-    print(f"The computer guessed this card: {requested_card2}")
+    print(f"The computer guessed this card rank: {requested_card2.rank}")
     if found2 == []:
         print("\nGO FISH!\n")
         Computer.add_cards(deck.get_cards())
